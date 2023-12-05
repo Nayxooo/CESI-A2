@@ -11,10 +11,11 @@ namespace NS_composants
 	{
 		System::IO::File::Delete(fichier);
 	}
+
 	void CLfichier::copier(String^ fichierSource, String^ fichierDestination)
 	{
 		String^ nomDeFichierExtension;
-		nomDeFichierExtension = System::IO::Path::GetFileName(fichierSource);
+		nomDeFichierExtension = System::IO::Path::GetFileName(fichierSource); // Récupère le nom du fichier
 		System::IO::File::Copy(fichierSource, fichierDestination + "\\" + nomDeFichierExtension);
 	}
 }
